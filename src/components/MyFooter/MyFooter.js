@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 
 type Props = {}
 
-class Home extends Component<Props> {
+class MyFooter extends Component<Props> {
     render() {
         return (
             <div>
-                Home
+Footer
             </div>
         )
     }
 }
 
-export default Home;
+export default MyFooter;
