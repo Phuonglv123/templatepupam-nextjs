@@ -1,0 +1,29 @@
+.feature {
+  padding-bottom: 50px;
+
+  .titleScene {
+    text-align: center;
+    margin: 30px;
+  }
+}
+
+
+img {
+  width: 100%;
+}
+
+.desc {
+  background-color: rgba(255, 229, 100, 0.3);
+  border-left-color: #ffe564;
+  border-left-width: 9px;
+  border-left-style: solid;
+  padding: 20px 45px 20px 26px;
+  margin-bottom: 30px;
+
+  p {
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+  }
+
+}

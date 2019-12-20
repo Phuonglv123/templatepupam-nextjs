@@ -12,9 +12,9 @@ class AppRoute extends Component<Props> {
             <Router>
                 <Switch>
                     {PostRoutes.map((i, index) =>
-                        <Route exact={true} key={index} path={i.path} render={() => <Post route={i}/>}/>
+                        <Route exact={i.exact} key={index} path={i.path} render={() => <Post route={i}/>}/>
                     )}
-                    <Route exact={true} path={'/all-routes/'} component={AllRoutes}/>
+                    <Route path={'/all-routes/'} component={AllRoutes}/>
                 </Switch>
             </Router>
         )

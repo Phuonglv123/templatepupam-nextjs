@@ -1,0 +1,52 @@
+$primary-size: 14px;
+$primary-font: 'Be Vietnam', sans-serif;
+$action-color: #2196F3;
+
+
+.myFooter {
+  .footerAbout {
+    display: grid;
+    align-items: center;
+    justify-content: flex-start;
+
+    span {
+      color: white;
+    }
+  }
+
+  .titleFooter {
+    color: white;
+    font-size: 1rem;
+    font-family: $primary-font;
+    font-weight: bold;
+  }
+
+  .linkFooter {
+    a {
+      color: white;
+      font-family: $primary-font;
+      font-size: 0.8rem;
+    }
+
+  }
+
+  .footerLi {
+    ul {
+      li {
+        list-style: none;
+        color: white;
+      }
+    }
+  }
+
+  .resLogo {
+    text-align: left;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .resLogo {
+    margin: 35px;
+  }
+}
