@@ -1,0 +1,118 @@
+$primary-size: 14px;
+$primary-font: 'Be Vietnam', sans-serif;
+$action-color: #2196F3;
+
+.register {
+  width: 100%;
+  margin-top: -4.2em;
+
+  a {
+    text-decoration: none;
+
+  }
+
+  .bckColor {
+    background-image: url("./image/e1.png");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: bottom;
+    background-size: cover;
+    height: 100vh;
+
+
+    .myCard {
+      padding: 10px;
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+      border-radius: 8px;
+      min-width: 870px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      top: 30%;
+      right: 20px;
+
+      label {
+        color: white;
+        font-size: $primary-size;
+        font-family: $primary-font;
+      }
+
+      Button {
+        font-size: 1.2rem;
+        padding: 8px 30px 10px 30px;
+        background: white;
+        border: none;
+        border-radius: 8px;
+        color: #175ede;
+        font-weight: 600;
+
+        &:active {
+          background-color: #175ede;
+          color: white;
+          border: 1px solid #fff;
+        }
+      }
+
+    }
+
+    .widthInput {
+      width: 20em;
+    }
+  }
+}
+
+.titleRegister {
+  color: #233d63;
+  font-size: 1.5rem;
+  font-family: $primary-font;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+.left {
+  width: 40%;
+}
+
+.right {
+  width: 60%;
+}
+
+
+@media only screen and (max-width: 1440px) {
+  .bckColor {
+    .myCard {
+      min-width: 750px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .bckColor {
+    padding: 10em 4em !important;
+
+    .myCard {
+      min-width: 570px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .left {
+    display: none;
+  }
+
+  .right {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .bckColor {
+    padding: 10em 0 !important;
+
+    .myCard {
+      min-width: 200px !important;
+    }
+  }
+}

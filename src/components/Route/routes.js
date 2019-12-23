@@ -3,6 +3,7 @@ import About from "../../posts/About/About";
 import Home from "../../posts/Home/Home";
 import AppURL from "./AppURL";
 import Feature from "../../posts/Feature/Feature";
+import Register from "../../posts/Register/Register";
 
 export const PostRoutes: Array<RouteItem> = [
     {
@@ -20,6 +21,11 @@ export const PostRoutes: Array<RouteItem> = [
         path: '/feature/',
         title: 'Feature',
         content: Feature,
+    },
+    {
+        path: '/register/',
+        title: 'Register',
+        content: Register,
     },
 ];
 

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Lightbox from "react-image-lightbox";
 import css from '../../Feature.module.scss';
 
-class InfomationAccount extends Component {
+class InformationAccount extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -46,4 +46,4 @@ class InfomationAccount extends Component {
     }
 }
 
-export default InfomationAccount;
+export default InformationAccount;

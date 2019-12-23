@@ -1,17 +1,21 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
 
 class MyHeader extends Component {
     render() {
         const style = {
             fontSize: 20,
-            fontWeight: 500,
+            fontWeight: 400,
+            color: 'white'
+        };
+        const logo = {
+            fontSize: 28,
+            fontWeight: 400,
             color: 'white'
         };
         return (
             <nav id='bg-custom' className="navbar navbar-expand-md  navbar-dark">
                 <div className="container">
-                    <a className="navbar-brand" href="/" style={style}>G SuiteX</a>
+                    <a className="navbar-brand" href="/" style={logo}>G SuiteX</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#collapsibleNavbar">
                         <span className="navbar-toggler-icon"></span>
@@ -38,7 +42,7 @@ class MyHeader extends Component {
                                    target='_blank'>Login</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" style={style} href="#">Register</a>
+                                <a className="nav-link" style={style} href="/register">Register</a>
                             </li>
                         </ul>
                     </div>

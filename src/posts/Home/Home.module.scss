@@ -8,150 +8,120 @@ i {
 
 body {
   font-family: $primary-font;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $primary-font;
 }
 
-.banner {
-  background-image: url("images/hero-6-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
+.home {
   width: 100%;
-  height: auto;
-  background-color: #f8fbff;
-  padding-top: 5em;
+  margin-top: -5em;
 
-  .bannerText {
-    margin: 14em 9em;
-    text-align: center;
-    display: grid;
-    justify-content: center;
+  .banner {
+    background-image: url("images/hero-6-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
+    background-color: #f8fbff;
+    padding-top: 5em;
 
-    button {
-      background-color: #387BFF;
-      border: 1px solid #387BFF;
-      color: white;
-      border-radius: 50px;
-      font-size: 1.5rem;
-      margin: 10px;
-      padding: 10px 10px 13px 10px;
-      width: 230px;
+    .bannerText {
+      margin: 14em 9em;
+      text-align: center;
+      display: grid;
+      justify-content: center;
 
-      &:hover {
-        background-color: white;
-        color: $action-color;
-        transition: all 1s;
+      button {
+        background-color: #387BFF;
+        border: 1px solid #387BFF;
+        color: white;
+        border-radius: 50px;
+        font-size: 1.5rem;
+        margin: 10px;
+        padding: 10px 10px 13px 10px;
+        width: 230px;
+
+        &:hover {
+          background-color: white;
+          color: $action-color;
+          transition: all 1s;
+        }
+      }
+
+      span {
+        font-size: 2.5rem;
+        color: white;
+        font-weight: bold;
+        font-family: $primary-font;
+      }
+    }
+  }
+
+  .service {
+    background-image: url("images/service-about-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-position: center;
+    padding-top: 5em;
+    padding-bottom: 2em;
+
+    .flexCenter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .leftCard {
+        margin-left: 10px;
       }
     }
 
-    span {
-      font-size: 2.5rem;
-      color: white;
-      font-weight: bold;
-      font-family: $primary-font;
-    }
-  }
-}
+    .myIcon {
+      background-color: #005cbf;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      text-align: center;
+      margin: 0 auto;
+      line-height: 5;
 
-.service {
-  background-image: url("images/service-about-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  background-position: center;
-  padding-top: 5em;
-  padding-bottom: 2em;
+      i {
+        font-size: 2rem;
+      }
 
-  .flexCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .leftCard {
-      margin-left: 10px;
-    }
-  }
-
-  .myIcon {
-    background-color: #005cbf;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    text-align: center;
-    margin: 0 auto;
-    line-height: 5;
-
-    i {
-      font-size: 2rem;
     }
 
-  }
-
-  .serviceTitle {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #233d63;
-  }
-
-  .serviceText {
-    margin: 10em 10em;
-
-    .textTop {
-      font-size: 1.5rem;
-      color: $action-color;
-      font-family: $primary-font;
-    }
-
-    .textMiddle {
-      font-size: 1.5rem;
+    .serviceTitle {
+      font-size: 1.2rem;
       font-weight: bold;
       color: #233d63;
     }
 
-    .textEnd {
-      font-size: 1rem;
-      color: #ccc8c8;
-      font-family: $primary-font;
-    }
+    .serviceText {
+      margin: 10em 10em;
 
-    button {
-      background-color: #387BFF;
-      border: 1px solid #387BFF;
-      color: white;
-      border-radius: 50px;
-      font-size: 1rem;
-      margin: 10px;
-      padding: 10px 10px 13px 10px;
-      width: 230px;
-
-      &:hover {
-        background-color: white;
+      .textTop {
+        font-size: 1.5rem;
         color: $action-color;
-        transition: all 1s;
+        font-family: $primary-font;
       }
-    }
-  }
-}
 
-.feature {
-  background-color: #f8fbff;
+      .textMiddle {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #233d63;
+      }
 
-  .overView {
-    padding: 3rem;
-    margin: 3rem;
-  }
+      .textEnd {
+        font-size: 1rem;
+        color: #ccc8c8;
+        font-family: $primary-font;
+      }
 
-  .featureText {
-    margin: 2em 8em;
-
-    .btnFeature {
-      text-align: center;
-      margin: 30px;
-
-      a {
+      button {
         background-color: #387BFF;
         border: 1px solid #387BFF;
         color: white;
@@ -165,105 +135,142 @@ h1, h2, h3, h4, h5, h6 {
           background-color: white;
           color: $action-color;
           transition: all 1s;
-          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .feature {
+    background-color: #f8fbff;
+
+    .overView {
+      padding: 3rem;
+      margin: 3rem;
+    }
+
+    .featureText {
+      margin: 2em 8em;
+
+      .btnFeature {
+        text-align: center;
+        margin: 30px;
+
+        a {
+          background-color: #387BFF;
+          border: 1px solid #387BFF;
+          color: white;
+          border-radius: 50px;
+          font-size: 1rem;
+          margin: 10px;
+          padding: 10px 10px 13px 10px;
+          width: 230px;
+
+          &:hover {
+            background-color: white;
+            color: $action-color;
+            transition: all 1s;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .textTop {
+        font-size: 1.5rem;
+        color: $action-color;
+        font-family: $primary-font;
+      }
+
+      .textMiddle {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #233d63;
+      }
+
+      .featureIcon {
+        i {
+          font-size: 2rem;
+          margin-right: 1rem
+        }
+      }
+
+      .featureTitle {
+        span {
+          font-size: 1rem;
+          font-weight: bold;
+          font-family: $primary-font;
+          color: #233d63;
         }
       }
     }
 
-    .textTop {
-      font-size: 1.5rem;
-      color: $action-color;
-      font-family: $primary-font;
+    .marginImgFeature {
+      margin: 10em 8em;
+    }
+  }
+
+  .happyClient {
+    .overClient {
+      margin: 7em 8em;
     }
 
-    .textMiddle {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #233d63;
-    }
+    .happyClientText {
+      margin-top: 20px;
+      text-align: left;
 
-    .featureIcon {
-      i {
-        font-size: 2rem;
-        margin-right: 1rem
-      }
-    }
-
-    .featureTitle {
-      span {
-        font-size: 1rem;
-        font-weight: bold;
+      .textTop {
+        font-size: 1.5rem;
+        color: $action-color;
         font-family: $primary-font;
+      }
+
+      .textMiddle {
+        font-size: 1.5rem;
+        font-weight: bold;
         color: #233d63;
       }
+
+      .featureIcon {
+        i {
+          font-size: 2rem;
+          margin-right: 1rem
+        }
+      }
     }
   }
 
-  .marginImgFeature {
-    margin: 10em 8em;
-  }
-}
+  .pricing {
+    margin-top: 0;
+    margin-bottom: 5em;
 
-.happyClient {
-  .overClient {
-    margin: 7em 8em;
-  }
-
-  .happyClientText {
-    margin-top: 20px;
-    text-align: left;
-
-    .textTop {
-      font-size: 1.5rem;
-      color: $action-color;
+    .titleCard {
+      font-size: 1.8rem;
+      color: #233d63;
+      font-weight: bold;
       font-family: $primary-font;
     }
 
-    .textMiddle {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #233d63;
-    }
+    .buttonCard {
+      text-align: center;
 
-    .featureIcon {
-      i {
-        font-size: 2rem;
-        margin-right: 1rem
+      button {
+        background-color: #387BFF;
+        border: 1px solid #387BFF;
+        color: white;
+        border-radius: 50px;
+        font-size: 1rem;
+        margin: 10px;
+        padding: 10px 10px 13px 10px;
+        width: 230px;
+
+        &:hover {
+          background-color: white;
+          color: $action-color;
+          transition: all 1s;
+        }
       }
     }
   }
 }
 
-.pricing {
-  margin-top: 0;
-  margin-bottom: 5em;
 
-  .titleCard {
-    font-size: 1.8rem;
-    color: #233d63;
-    font-weight: bold;
-    font-family: $primary-font;
-  }
-
-  .buttonCard {
-    text-align: center;
-
-    button {
-      background-color: #387BFF;
-      border: 1px solid #387BFF;
-      color: white;
-      border-radius: 50px;
-      font-size: 1rem;
-      margin: 10px;
-      padding: 10px 10px 13px 10px;
-      width: 230px;
-
-      &:hover {
-        background-color: white;
-        color: $action-color;
-        transition: all 1s;
-      }
-    }
-  }
-}
 

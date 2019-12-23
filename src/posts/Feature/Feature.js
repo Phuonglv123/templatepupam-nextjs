@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import style from './Feature.module.scss';
-import {Switch, Route, Router} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import AppURL from "../../components/Route/AppURL";
 import StartGsuitePost from "./FeaturePost/StartGsuitePost";
 import ViewEmailPost from "./FeaturePost/Gmail/ViewEmailPost";
@@ -15,7 +15,7 @@ import BulkMigration from "./FeaturePost/Driver/BulkMigration";
 import ActionsLog from "./FeaturePost/Other/ActionsLog";
 import StaticEmail from "./FeaturePost/Gmail/StaticEmail";
 import Authentication from "./FeaturePost/Other/Authentication";
-import InfomationAccount from "./FeaturePost/Other/InfomationAccount";
+import InformationAccount from "./FeaturePost/Other/InformationAccount";
 import ListAccount from "./FeaturePost/Other/ListAccount";
 import HistoryLogin from "./FeaturePost/Other/HistoryLogin";
 
@@ -29,10 +29,10 @@ class Feature extends Component {
             <div className={style.feature}>
                 <div className='container mx-auto pt-5'>
                     <div className="row">
-                        <div className="col-sm-3">
+                        <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12">
                             <SidebarFeature/>
                         </div>
-                        <div className="col-sm-9">
+                        <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12">
                             <div className="main">
                                 <Switch>
                                     {FeatureRoutes.map((route, index) => (
@@ -89,7 +89,7 @@ const FeatureRoutes = [
         component: ActionsLog,
     }, {
         path: AppURL.informationAccount(),
-        component: InfomationAccount,
+        component: InformationAccount,
     }, {
         path: AppURL.listAccount(),
         component: ListAccount,

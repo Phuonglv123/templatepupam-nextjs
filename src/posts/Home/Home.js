@@ -11,7 +11,7 @@ class Home extends Component<Props> {
 
     render() {
         return (
-            <div style={{marginTop: '-62px'}}>
+            <div className={style.home}>
                 <div className={style.banner}>
                     <div className='row' style={{width: '100%', margin: '0 auto'}}>
                         <div className='col-sm-12 col-md-12 col-lg-6 col-xl-6'>

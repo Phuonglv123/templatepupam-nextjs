@@ -7,10 +7,10 @@ class SidebarFeature extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            openEmail: this.props.open,
-            openDriver: this.props.openDriver,
-            openOther: this.props.openOther,
-            activeId: null,
+            openEmail: false,
+            openDriver: false,
+            openOther: false,
+            activeId: '',
             top: null
         }
     }
@@ -19,6 +19,7 @@ class SidebarFeature extends Component {
         this.setState({
             openEmail: !this.state.openEmail
         });
+        localStorage.setItem('openMail', !this.state.openEmail)
     };
 
     toggleDriver = () => {
@@ -36,7 +37,7 @@ class SidebarFeature extends Component {
     handleClick(id) {
         this.setState({
             activeId: id
-        })
+        });
     };
 
     componentDidMount() {
@@ -51,12 +52,6 @@ class SidebarFeature extends Component {
     }
 
     render() {
-        const active = {
-            borderRight: '2px solid #175ede',
-        };
-        const fontWeight = {
-            fontWeight: 'bold'
-        };
         return (
             <div className={style.sidebar} style={{top: this.state.top}}>
                 <div className={style.title}>
@@ -75,20 +70,17 @@ class SidebarFeature extends Component {
                         <li className="nav-item">
                             <span className="nav-link" onClick={this.toggleEmail}
                                   style={{fontWeight: this.state.openEmail ? 'bold' : null}}>G Mail</span>
-                            {this.state.openEmail &&
-                            <div>
+                            {localStorage.getItem('openMail') === 'true' && <div>
                                 <ul className="nav flex-column" style={{marginLeft: -30}}>
                                     {GMail.map((i, index) => (
                                         <li key={index}
+                                            onClick={this.handleClick.bind(this, i.id)}
                                             className='nav-item'>
-                                            <Link to={i.to}
-                                                  onClick={this.handleClick.bind(this, i.id)}>
-                                                <div className='row'>
-                                                    <span
-                                                        className={'col-sm-3'}
-                                                        style={this.state.activeId === i.id ? active : null}/>
-                                                    <span className='col-sm-9'
-                                                          style={this.state.activeId === i.id ? fontWeight : null}>{i.name}</span>
+                                            <Link to={i.to}>
+                                                <div
+                                                    className={`row ${this.state.activeId === i.id && 'active'}`}>
+                                                    <span className={'col-sm-3'}/>
+                                                    <span className='col-sm-9'>{i.name}</span>
                                                 </div>
                                             </Link>
                                         </li>
@@ -100,19 +92,16 @@ class SidebarFeature extends Component {
                         <li className="nav-item">
                             <span className="nav-link" onClick={this.toggleDriver}
                                   style={{fontWeight: this.state.openDriver ? 'bold' : null}}>Driver</span>
-                            {this.state.openDriver &&
-                            <div>
+                            {this.state.openDriver && <div>
                                 <ul className="nav flex-column" style={{marginLeft: -30}}>
                                     {Driver.map((i, index) => (
                                         <li key={index}
                                             className='nav-item'>
                                             <Link to={i.to}
                                                   onClick={this.handleClick.bind(this, i.id)}>
-                                                <div className='row'>
-                                                    <span className='col-sm-3'
-                                                          style={this.state.activeId === i.id ? active : null}/>
-                                                    <span className='col-sm-9'
-                                                          style={this.state.activeId === i.id ? fontWeight : null}>{i.name}</span>
+                                                <div className={`row ${this.state.activeId === i.id && 'active'}`}>
+                                                    <span className='col-sm-3'/>
+                                                    <span className='col-sm-9'>{i.name}</span>
                                                 </div>
                                             </Link>
                                         </li>
@@ -124,19 +113,16 @@ class SidebarFeature extends Component {
                         <li className="nav-item">
                             <span className="nav-link" onClick={this.toggleOther}
                                   style={{fontWeight: this.state.openOther ? 'bold' : null}}>Other feature</span>
-                            {this.state.openOther &&
-                            <div>
+                            {this.state.openOther && <div>
                                 <ul className="nav flex-column" style={{marginLeft: -30}}>
                                     {Other.map((i, index) => (
                                         <li key={index}
                                             className='nav-item'>
                                             <Link to={i.to}
                                                   onClick={this.handleClick.bind(this, i.id)}>
-                                                <div className='row'>
-                                                    <span className='col-sm-3'
-                                                          style={this.state.activeId === i.id ? active : null}/>
-                                                    <span className='col-sm-9'
-                                                          style={this.state.activeId === i.id ? fontWeight : null}>{i.name}</span>
+                                                <div className={`row ${this.state.activeId === i.id && 'active'}`}>
+                                                    <span className='col-sm-3'/>
+                                                    <span className='col-sm-9'>{i.name}</span>
                                                 </div>
                                             </Link>
                                         </li>
