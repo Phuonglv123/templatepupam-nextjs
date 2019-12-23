@@ -20,6 +20,9 @@ import ListAccount from "./FeaturePost/Other/ListAccount";
 import HistoryLogin from "./FeaturePost/Other/HistoryLogin";
 
 class Feature extends Component {
+    componentDidMount(): void {
+        document.getElementById('bg-custom').style.backgroundColor = '#343a40'
+    }
 
     render() {
         return (

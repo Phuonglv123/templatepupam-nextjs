@@ -1,11 +1,12 @@
 .sidebar {
-  height: 100vh;
-  min-height: 100vh;
-}
-
-.MySidebar {
+  height: 90%;
+  min-height: 90%;
   position: fixed;
-  height: 100%;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .title {
     span {
@@ -52,14 +53,7 @@
 }
 
 .active {
-  span:first-child {
-    border-right: 2px solid #175ede;
-  }
-
-  span:last-child {
-    color: black;
-    font-weight: 600;
-  }
+  border-right: 2px solid #175ede !important;
 }
 
 
@@ -67,8 +61,8 @@
   .MySidebar {
     position: unset;
 
-    .menu{
-      ul{
+    .menu {
+      ul {
         margin-left: 30px
       }
     }

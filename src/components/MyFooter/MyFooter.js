@@ -6,7 +6,7 @@ type Props = {}
 class MyFooter extends Component<Props> {
     render() {
         return (
-            <div className={style.myFooter}>
+            <div className={style.myFooter} id='contact'>
                 <div style={{width: '100%', backgroundColor: 'rgb(28, 35, 61)', borderTop: '1px solid #293357db'}}
                      className="pt-5 pb-5">
                     <div className="container">

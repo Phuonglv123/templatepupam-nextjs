@@ -10,7 +10,7 @@ class SidebarFeature extends Component {
             openEmail: this.props.open,
             openDriver: this.props.openDriver,
             openOther: this.props.openOther,
-            activeLink: null,
+            activeId: null,
             top: null
         }
     }
@@ -33,18 +33,32 @@ class SidebarFeature extends Component {
         });
     };
 
-    handleClick = () => {
-        const currentClass = document.getElementsByClassName("nav-item");
-        for (let i = 0; i < currentClass.length; i++) {
-            currentClass[i].classList.toggle("active_item");
-            console.log(currentClass[i]);
-        }
+    handleClick(id) {
+        this.setState({
+            activeId: id
+        })
     };
 
-    render() {
+    componentDidMount() {
+        document.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+                this.setState({top: '10px'})
+            } else {
+                this.setState({top: null})
+            }
+        });
+        window.scrollTo(0, 0);
+    }
 
+    render() {
+        const active = {
+            borderRight: '2px solid #175ede',
+        };
+        const fontWeight = {
+            fontWeight: 'bold'
+        };
         return (
-            <div className={style.sidebar}>
+            <div className={style.sidebar} style={{top: this.state.top}}>
                 <div className={style.title}>
                     <span>Table of content</span>
                 </div>
@@ -59,17 +73,22 @@ class SidebarFeature extends Component {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <span className="nav-link" onClick={this.toggleEmail}>G Mail</span>
+                            <span className="nav-link" onClick={this.toggleEmail}
+                                  style={{fontWeight: this.state.openEmail ? 'bold' : null}}>G Mail</span>
                             {this.state.openEmail &&
                             <div>
-                                <ul className="nav flex-column">
+                                <ul className="nav flex-column" style={{marginLeft: -30}}>
                                     {GMail.map((i, index) => (
                                         <li key={index}
                                             className='nav-item'>
-                                            <Link to={i.to}>
+                                            <Link to={i.to}
+                                                  onClick={this.handleClick.bind(this, i.id)}>
                                                 <div className='row'>
-                                                    <span className='col-sm-3'/>
-                                                    <span className='col-sm-9'>{i.name}</span>
+                                                    <span
+                                                        className={'col-sm-3'}
+                                                        style={this.state.activeId === i.id ? active : null}/>
+                                                    <span className='col-sm-9'
+                                                          style={this.state.activeId === i.id ? fontWeight : null}>{i.name}</span>
                                                 </div>
                                             </Link>
                                         </li>
@@ -79,17 +98,21 @@ class SidebarFeature extends Component {
                             }
                         </li>
                         <li className="nav-item">
-                            <span className="nav-link" onClick={this.toggleDriver}>Driver</span>
+                            <span className="nav-link" onClick={this.toggleDriver}
+                                  style={{fontWeight: this.state.openDriver ? 'bold' : null}}>Driver</span>
                             {this.state.openDriver &&
                             <div>
-                                <ul className="nav flex-column">
+                                <ul className="nav flex-column" style={{marginLeft: -30}}>
                                     {Driver.map((i, index) => (
                                         <li key={index}
                                             className='nav-item'>
-                                            <Link to={i.to}>
+                                            <Link to={i.to}
+                                                  onClick={this.handleClick.bind(this, i.id)}>
                                                 <div className='row'>
-                                                    <span className='col-sm-3'/>
-                                                    <span className='col-sm-9'>{i.name}</span>
+                                                    <span className='col-sm-3'
+                                                          style={this.state.activeId === i.id ? active : null}/>
+                                                    <span className='col-sm-9'
+                                                          style={this.state.activeId === i.id ? fontWeight : null}>{i.name}</span>
                                                 </div>
                                             </Link>
                                         </li>
@@ -99,17 +122,21 @@ class SidebarFeature extends Component {
                             }
                         </li>
                         <li className="nav-item">
-                            <span className="nav-link" onClick={this.toggleOther}>Other feature</span>
+                            <span className="nav-link" onClick={this.toggleOther}
+                                  style={{fontWeight: this.state.openOther ? 'bold' : null}}>Other feature</span>
                             {this.state.openOther &&
                             <div>
-                                <ul className="nav flex-column" style={{lineHeight: 1.5}}>
+                                <ul className="nav flex-column" style={{marginLeft: -30}}>
                                     {Other.map((i, index) => (
-                                        <li key={index} style={{marginBottom: 10}}
+                                        <li key={index}
                                             className='nav-item'>
-                                            <Link to={i.to}>
+                                            <Link to={i.to}
+                                                  onClick={this.handleClick.bind(this, i.id)}>
                                                 <div className='row'>
-                                                    <span className='col-sm-2'/>
-                                                    <span className='col-sm-10'>{i.name}</span>
+                                                    <span className='col-sm-3'
+                                                          style={this.state.activeId === i.id ? active : null}/>
+                                                    <span className='col-sm-9'
+                                                          style={this.state.activeId === i.id ? fontWeight : null}>{i.name}</span>
                                                 </div>
                                             </Link>
                                         </li>
@@ -129,26 +156,33 @@ const GMail = [
     {
         name: 'Xem email',
         to: AppURL.viewEmailPost(),
+        id: 'view email'
     },
     {
         name: 'Tìm kiếm email',
         to: AppURL.searchEmailPost(),
+        id: 'search email'
     },
     {
         name: 'Xem email đã xóa',
         to: AppURL.viewEmailDeleted(),
+        id: 'view email deleted'
     }, {
         name: 'Cấu hình G Mail',
         to: AppURL.configGMail(),
+        id: 'config email'
     }, {
         name: 'Thông báo',
         to: AppURL.notifyEmail(),
+        id: 'notify'
     }, {
         name: 'Thống kê',
         to: AppURL.staticEmail(),
+        id: 'static'
     }, {
         name: 'Sửa email liên hệ',
         to: AppURL.editContactEmail(),
+        id: 'edit email'
     },
 ];
 
@@ -156,10 +190,12 @@ const Driver = [
     {
         name: 'Chuyển dữ liệu',
         to: AppURL.transferDriver(),
+        id: 'transfer data'
     },
     {
         name: 'Bulk migration',
         to: AppURL.BulkMigration(),
+        id: 'bulk migration'
     },
 ];
 
@@ -167,20 +203,25 @@ const Other = [
     {
         name: 'Phân quyền',
         to: AppURL.authentication(),
+        id: 'authentication'
     },
     {
         name: 'Lịch sử hành động',
         to: AppURL.actionLog(),
+        id: 'action log'
     },
     {
         name: 'Thông tin tài khoản',
         to: AppURL.informationAccount(),
+        id: 'information account'
     }, {
         name: 'Danh sách tài khoản',
         to: AppURL.listAccount(),
+        id: 'list account'
     }, {
         name: 'Lịch sử đăng nhập',
         to: AppURL.historyLogin(),
+        id: 'history'
     },
 ];
 

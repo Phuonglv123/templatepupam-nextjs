@@ -5,9 +5,13 @@ import MyFooter from "../../components/MyFooter/MyFooter";
 type Props = {}
 
 class Home extends Component<Props> {
+    componentDidMount(): void {
+        document.getElementById('bg-custom').style.backgroundColor = 'transparent'
+    }
+
     render() {
         return (
-            <div>
+            <div style={{marginTop: '-62px'}}>
                 <div className={style.banner}>
                     <div className='row' style={{width: '100%', margin: '0 auto'}}>
                         <div className='col-sm-12 col-md-12 col-lg-6 col-xl-6'>
@@ -28,7 +32,7 @@ class Home extends Component<Props> {
                     </div>
                 </div>
 
-                <div className={style.service}>
+                <div className={style.service} id='about'>
                     <div className='row' style={{width: '100%', margin: '0 auto'}}>
                         <div className='col-sm-12 col-md-12 col-lg-6 col-xl-6'>
                             <div className={style.flexCenter}>
@@ -93,7 +97,7 @@ class Home extends Component<Props> {
                     </div>
                 </div>
 
-                <div className={style.feature}>
+                <div className={style.feature} id='feature'>
                     <div style={{width: '100%', margin: '0 auto'}} className='row'>
                         <div className='col-sm-12 col-md-12 col-lg-6 col-xl-6'>
                             <div className={style.overView}>
@@ -250,7 +254,7 @@ class Home extends Component<Props> {
                     </div>
                 </div>
 
-                <div className={style.pricing}>
+                <div className={style.pricing} id='pricing'>
                     <div className="container">
                         <div className="text-center mb-3">
                             <div className='mb-3'>
