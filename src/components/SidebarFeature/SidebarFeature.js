@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import style from "./Style.module.scss";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import AppURL from "../Route/AppURL";
+import {toJS} from "mobx";
 
 class SidebarFeature extends Component {
     constructor(props) {
@@ -10,7 +11,6 @@ class SidebarFeature extends Component {
             openEmail: false,
             openDriver: false,
             openOther: false,
-            activeId: '',
             top: null
         }
     }
@@ -26,18 +26,14 @@ class SidebarFeature extends Component {
         this.setState({
             openDriver: !this.state.openDriver
         });
+        localStorage.setItem('openDriver', !this.state.openDriver)
     };
 
     toggleOther = () => {
         this.setState({
             openOther: !this.state.openOther
         });
-    };
-
-    handleClick(id) {
-        this.setState({
-            activeId: id
-        });
+        localStorage.setItem('openOther', !this.state.openOther)
     };
 
     componentDidMount() {
@@ -52,6 +48,7 @@ class SidebarFeature extends Component {
     }
 
     render() {
+        const path = this.props.location.pathname;
         return (
             <div className={style.sidebar} style={{top: this.state.top}}>
                 <div className={style.title}>
@@ -61,7 +58,7 @@ class SidebarFeature extends Component {
                     <ul className="nav flex-column">
                         <li className='nav-item'>
                             <Link to={AppURL.feature()}>
-                                <div className='row'>
+                                <div className={`row ${path === '/feature' && 'active'}`}>
                                     <span style={{width: '15px', marginRight: 12}}/>
                                     <span>Bắt đầu</span>
                                 </div>
@@ -74,11 +71,10 @@ class SidebarFeature extends Component {
                                 <ul className="nav flex-column" style={{marginLeft: -30}}>
                                     {GMail.map((i, index) => (
                                         <li key={index}
-                                            onClick={this.handleClick.bind(this, i.id)}
                                             className='nav-item'>
                                             <Link to={i.to}>
                                                 <div
-                                                    className={`row ${this.state.activeId === i.id && 'active'}`}>
+                                                    className={`row ${path === i.to && 'active'}`}>
                                                     <span className={'col-sm-3'}/>
                                                     <span className='col-sm-9'>{i.name}</span>
                                                 </div>
@@ -92,14 +88,13 @@ class SidebarFeature extends Component {
                         <li className="nav-item">
                             <span className="nav-link" onClick={this.toggleDriver}
                                   style={{fontWeight: this.state.openDriver ? 'bold' : null}}>Driver</span>
-                            {this.state.openDriver && <div>
+                            {localStorage.getItem('openDriver') === 'true' && <div>
                                 <ul className="nav flex-column" style={{marginLeft: -30}}>
                                     {Driver.map((i, index) => (
                                         <li key={index}
                                             className='nav-item'>
-                                            <Link to={i.to}
-                                                  onClick={this.handleClick.bind(this, i.id)}>
-                                                <div className={`row ${this.state.activeId === i.id && 'active'}`}>
+                                            <Link to={i.to}>
+                                                <div className={`row ${path === i.to && 'active'}`}>
                                                     <span className='col-sm-3'/>
                                                     <span className='col-sm-9'>{i.name}</span>
                                                 </div>
@@ -113,14 +108,13 @@ class SidebarFeature extends Component {
                         <li className="nav-item">
                             <span className="nav-link" onClick={this.toggleOther}
                                   style={{fontWeight: this.state.openOther ? 'bold' : null}}>Other feature</span>
-                            {this.state.openOther && <div>
+                            {localStorage.getItem('openOther') === 'true' && <div>
                                 <ul className="nav flex-column" style={{marginLeft: -30}}>
                                     {Other.map((i, index) => (
                                         <li key={index}
                                             className='nav-item'>
-                                            <Link to={i.to}
-                                                  onClick={this.handleClick.bind(this, i.id)}>
-                                                <div className={`row ${this.state.activeId === i.id && 'active'}`}>
+                                            <Link to={i.to}>
+                                                <div className={`row ${path === i.to && 'active'}`}>
                                                     <span className='col-sm-3'/>
                                                     <span className='col-sm-9'>{i.name}</span>
                                                 </div>
@@ -211,4 +205,4 @@ const Other = [
     },
 ];
 
-export default SidebarFeature;
+export default withRouter(SidebarFeature);
