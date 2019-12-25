@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import css from '../../Feature.module.scss';
 import Lightbox from "react-image-lightbox";
+import {Link} from "react-router-dom";
+import AppURL from "../../../../components/Route/AppURL";
 
 class ConfigEmail extends Component {
     constructor(props) {
@@ -53,6 +55,22 @@ class ConfigEmail extends Component {
                         <p>Hiện tại GsuiteX chỉ mới hỗ trợ chỉnh “Vacation responder”</p>
                     </div>
                 </div>
+                <hr/>
+                <div className={css.footerCenter}>
+                    <div>
+                        <Link to={AppURL.viewEmailDeleted()}>
+                            <span><i className="fas fa-long-arrow-alt-left"/></span>
+                            <span>Xem email đã xóa</span>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={AppURL.notifyEmail()}>
+                            <span>Thông báo</span>
+                            <span><i className="fas fa-long-arrow-alt-right"/></span>
+                        </Link>
+                    </div>
+                </div>
+
 
                 {isOpen && (
                     <Lightbox

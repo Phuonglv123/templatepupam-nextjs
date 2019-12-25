@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Lightbox from "react-image-lightbox";
 import css from '../../Feature.module.scss';
+import {Link} from "react-router-dom";
+import AppURL from "../../../../components/Route/AppURL";
 
 class HistoryLogin extends Component {
     constructor(props) {
@@ -34,6 +36,16 @@ class HistoryLogin extends Component {
                     <img src={require('./image/history-login.png')} alt="" onClick={() => {
                         this.openLightBox(0)
                     }}/>
+                </div>
+
+                <hr/>
+                <div className={css.footerFirst}>
+                    <div>
+                        <Link to={AppURL.listAccount()}>
+                            <span><i className="fas fa-long-arrow-alt-left"/></span>
+                            <span>Danh sách tài khoản</span>
+                        </Link>
+                    </div>
                 </div>
 
                 {isOpen && (

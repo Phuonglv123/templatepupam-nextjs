@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import css from '../../Feature.module.scss';
 import Lightbox from "react-image-lightbox";
+import {Link} from "react-router-dom";
+import AppURL from "../../../../components/Route/AppURL";
 
 class NotifyEmail extends Component {
     constructor(props) {
@@ -60,6 +62,22 @@ class NotifyEmail extends Component {
                                 email có tệp đính kèm và có kích thước lớn hơn một kích thước cụ thể
                             </li>
                         </ul>
+                    </div>
+                </div>
+
+                <hr/>
+                <div className={css.footerCenter}>
+                    <div>
+                        <Link to={AppURL.configGMail()}>
+                            <span><i className="fas fa-long-arrow-alt-left"/></span>
+                            <span>Cấu hình G Mail</span>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={AppURL.staticEmail()}>
+                            <span>Thống kê</span>
+                            <span><i className="fas fa-long-arrow-alt-right"/></span>
+                        </Link>
                     </div>
                 </div>
 

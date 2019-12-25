@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import css from '../../Feature.module.scss'
 import Lightbox from "react-image-lightbox";
+import {Link} from "react-router-dom";
+import AppURL from "../../../../components/Route/AppURL";
 
 class ViewEmailDeleted extends Component {
     constructor(props) {
@@ -41,6 +43,21 @@ class ViewEmailDeleted extends Component {
                     }}/>
                 </div>
 
+                <hr/>
+                <div className={css.footerCenter}>
+                    <div>
+                        <Link to={AppURL.searchEmailPost()}>
+                            <span style={{marginRight: 5}}><i className="fas fa-long-arrow-alt-left"/></span>
+                            <span>Tìm kiếm email</span>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={AppURL.configGMail()}>
+                            <span  style={{marginRight: 5}}>Cấu hình G Mail</span>
+                            <span><i className="fas fa-long-arrow-alt-right"/></span>
+                        </Link>
+                    </div>
+                </div>
                 {isOpen && (
                     <Lightbox
                         mainSrc={require('./image/emaildeleted.png')}

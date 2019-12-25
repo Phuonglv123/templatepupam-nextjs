@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import css from '../../Feature.module.scss';
 import Lightbox from "react-image-lightbox";
+import {Link} from "react-router-dom";
+import AppURL from "../../../../components/Route/AppURL";
 
 class TransferData extends Component {
     constructor(props) {
@@ -75,6 +77,22 @@ class TransferData extends Component {
                     <p>Việc chuyển dữ liệu có thể diễn ra khá lâu. Để xem kết quả quý khách vui lòng
                         không thoát khỏi trang này, nếu thoát việc chuyển dữ liệu vẫn tiếp tục nhưng
                         quý khách không thể xem kết quả được nữa.</p>
+                </div>
+
+                <hr/>
+                <div className={css.footerCenter}>
+                    <div>
+                        <Link to={AppURL.editContactEmail()}>
+                            <span><i className="fas fa-long-arrow-alt-left"/></span>
+                            <span>Sửa email liên hệ</span>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={AppURL.BulkMigration()}>
+                            <span>Bulk Migration</span>
+                            <span><i className="fas fa-long-arrow-alt-right"/></span>
+                        </Link>
+                    </div>
                 </div>
 
                 {isOpen && (

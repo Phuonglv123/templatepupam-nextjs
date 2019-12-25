@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import css from '../../Feature.module.scss';
 import Lightbox from "react-image-lightbox";
+import {Link} from "react-router-dom";
+import AppURL from "../../../../components/Route/AppURL";
 
 class BulkMigration extends Component {
     constructor(props) {
@@ -72,6 +74,22 @@ class BulkMigration extends Component {
                         <img src={require(`${images[3]}`)} alt="" onClick={() => {
                             this.openLightBox(3)
                         }}/>
+                    </div>
+                </div>
+
+                <hr/>
+                <div className={css.footerCenter}>
+                    <div>
+                        <Link to={AppURL.transferDriver()}>
+                            <span><i className="fas fa-long-arrow-alt-left"/></span>
+                            <span>Chuyển dữ liệu</span>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={AppURL.authentication()}>
+                            <span>Phân quyền</span>
+                            <span><i className="fas fa-long-arrow-alt-right"/></span>
+                        </Link>
                     </div>
                 </div>
 

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Lightbox from "react-image-lightbox";
 import css from '../../Feature.module.scss';
+import {Link} from "react-router-dom";
+import AppURL from "../../../../components/Route/AppURL";
 
 class ListAccount extends Component {
     constructor(props) {
@@ -34,6 +36,22 @@ class ListAccount extends Component {
                     <img src={require('./image/list-account.png')} alt="" onClick={() => {
                         this.openLightBox(0)
                     }}/>
+                </div>
+
+                <hr/>
+                <div className={css.footerCenter}>
+                    <div>
+                        <Link to={AppURL.informationAccount()}>
+                            <span><i className="fas fa-long-arrow-alt-left"/></span>
+                            <span>Thông tin tài khoản </span>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={AppURL.historyLogin()}>
+                            <span>Lịch sử đăng nhập</span>
+                            <span><i className="fas fa-long-arrow-alt-right"/></span>
+                        </Link>
+                    </div>
                 </div>
 
                 {isOpen && (

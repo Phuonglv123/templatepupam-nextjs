@@ -34,3 +34,44 @@ img {
   }
 
 }
+
+.footerFirst {
+  text-align: left;
+
+  a {
+    font-weight: 600;
+    font-size: 15px;
+
+    span:first-child {
+      margin-right: 5px;
+    }
+  }
+}
+
+.footerCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    font-weight: 600;
+    font-size: 15px;
+
+    span:first-child {
+      margin-right: 5px;
+    }
+  }
+}
+
+.footerEnd {
+  text-align: right;
+
+  a {
+    font-weight: 600;
+    font-size: 15px;
+
+    span:first-child {
+      margin-right: 5px;
+    }
+  }
+}

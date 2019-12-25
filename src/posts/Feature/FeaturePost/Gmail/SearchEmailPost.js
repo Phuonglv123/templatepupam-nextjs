@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import style from '../../Feature.module.scss'
 import Lightbox from "react-image-lightbox";
+import {Link} from "react-router-dom";
+import AppURL from "../../../../components/Route/AppURL";
 
 class SearchEmailPost extends Component {
 
@@ -97,6 +99,21 @@ class SearchEmailPost extends Component {
                                                         </span>
                 </div>
 
+                <hr/>
+                <div className={style.footerCenter}>
+                    <div>
+                        <Link to={AppURL.viewEmailPost()}>
+                            <span><i className="fas fa-long-arrow-alt-left"/></span>
+                            <span>Xem email</span>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={AppURL.viewEmailDeleted()}>
+                            <span>Xem email đã xóa</span>
+                            <span><i className="fas fa-long-arrow-alt-right"/></span>
+                        </Link>
+                    </div>
+                </div>
                 {isOpen && (
                     <Lightbox
                         mainSrc={require(`${images[photoIndex]}`)}

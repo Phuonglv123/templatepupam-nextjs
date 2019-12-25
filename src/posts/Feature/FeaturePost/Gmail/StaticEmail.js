@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Lightbox from "react-image-lightbox";
 import css from '../../Feature.module.scss';
+import {Link} from "react-router-dom";
+import AppURL from "../../../../components/Route/AppURL";
 
 class StaticEmail extends Component {
     constructor(props) {
@@ -45,6 +47,22 @@ class StaticEmail extends Component {
                 <div>
                     <p>Nhấp vào nút “Chi tiết” để xem chi tiết những email đã gửi ra ngoài.</p>
                     <p>Nhấp vào nút “Xuất ra file” để xuất kết quả ra file (CSV).</p>
+                </div>
+
+                <hr/>
+                <div className={css.footerCenter}>
+                    <div>
+                        <Link to={AppURL.notifyEmail()}>
+                            <span><i className="fas fa-long-arrow-alt-left"/></span>
+                            <span>Thông báo</span>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={AppURL.editContactEmail()}>
+                            <span>Sửa email liên hệ</span>
+                            <span><i className="fas fa-long-arrow-alt-right"/></span>
+                        </Link>
+                    </div>
                 </div>
 
                 {isOpen && (

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import style from '../Feature.module.scss'
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import {Link} from "react-router-dom";
+import AppURL from "../../../components/Route/AppURL";
 
 class StartGsuitePost extends Component {
     constructor(props) {
@@ -187,6 +189,15 @@ class StartGsuitePost extends Component {
                                 this.openLightBox(10)
                             }}/>
                         </div>
+                    </div>
+                </div>
+                <hr/>
+                <div className={style.footerEnd}>
+                    <div>
+                        <Link to={AppURL.viewEmailPost()}>
+                            <span>Xem email</span>
+                            <span><i className="fas fa-long-arrow-alt-right"/></span>
+                        </Link>
                     </div>
                 </div>
 

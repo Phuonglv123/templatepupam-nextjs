@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import style from '../../Feature.module.scss';
 import Lightbox from "react-image-lightbox";
+import {Link} from "react-router-dom";
+import AppURL from "../../../../components/Route/AppURL";
 
 class ViewEmailPost extends Component {
     constructor(props) {
@@ -115,6 +117,22 @@ class ViewEmailPost extends Component {
                         <img src={require(`${images[5]}`)} alt="" onClick={() => {
                             this.openLightBox(5)
                         }}/>
+                    </div>
+                </div>
+
+                <hr/>
+                <div className={style.footerCenter}>
+                    <div>
+                        <Link to={AppURL.feature()}>
+                            <span><i className="fas fa-long-arrow-alt-left"/></span>
+                            <span>Bắt đầu</span>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={AppURL.searchEmailPost()}>
+                            <span>Tìm kiếm email </span>
+                            <span><i className="fas fa-long-arrow-alt-right"/></span>
+                        </Link>
                     </div>
                 </div>
 

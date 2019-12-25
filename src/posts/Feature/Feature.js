@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import style from './Feature.module.scss';
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Link} from 'react-router-dom'
 import AppURL from "../../components/Route/AppURL";
 import StartGsuitePost from "./FeaturePost/StartGsuitePost";
 import ViewEmailPost from "./FeaturePost/Gmail/ViewEmailPost";

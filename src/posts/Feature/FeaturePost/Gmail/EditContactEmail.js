@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import css from '../../Feature.module.scss';
 import Lightbox from "react-image-lightbox";
+import {Link} from "react-router-dom";
+import AppURL from "../../../../components/Route/AppURL";
 
 class EditContactEmail extends Component {
     constructor(props) {
@@ -41,6 +43,22 @@ class EditContactEmail extends Component {
                     <img src={require('./image/editcontact.png')} alt="" onClick={() => {
                         this.openLightBox(0)
                     }}/>
+                </div>
+
+                <hr/>
+                <div className={css.footerCenter}>
+                    <div>
+                        <Link to={AppURL.staticEmail()}>
+                            <span><i className="fas fa-long-arrow-alt-left"/></span>
+                            <span>Thông kế</span>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={AppURL.transferDriver()}>
+                            <span>Chuyển dữ liệu</span>
+                            <span><i className="fas fa-long-arrow-alt-right"/></span>
+                        </Link>
+                    </div>
                 </div>
 
                 {isOpen && (

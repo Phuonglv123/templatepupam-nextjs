@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import style from "./Style.module.scss";
 import {Link, withRouter} from "react-router-dom";
 import AppURL from "../Route/AppURL";
-import {toJS} from "mobx";
 
 class SidebarFeature extends Component {
     constructor(props) {

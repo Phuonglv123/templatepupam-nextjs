@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Lightbox from "react-image-lightbox";
 import css from '../../Feature.module.scss';
+import {Link} from "react-router-dom";
+import AppURL from "../../../../components/Route/AppURL";
 
 class Authentication extends Component {
     constructor(props) {
@@ -36,6 +38,21 @@ class Authentication extends Component {
                         <img src={require('./image/auth.png')} alt="" onClick={() => {
                             this.openLightBox(0)
                         }}/>
+                    </div>
+                </div>
+                <hr/>
+                <div className={css.footerCenter}>
+                    <div>
+                        <Link to={AppURL.BulkMigration()}>
+                            <span><i className="fas fa-long-arrow-alt-left"/></span>
+                            <span>Bulk Migration</span>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={AppURL.actionLog()}>
+                            <span>Lịch sử hành động</span>
+                            <span><i className="fas fa-long-arrow-alt-right"/></span>
+                        </Link>
                     </div>
                 </div>
 

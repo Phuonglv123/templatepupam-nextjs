@@ -67,3 +67,9 @@
     }
   }
 }
+
+@-moz-document url-prefix() {
+  .sidebar {
+    scrollbar-width: none
+  }
+}
