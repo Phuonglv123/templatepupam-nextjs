@@ -20,6 +20,9 @@ class MyHeader extends Component {
                             data-target="#collapsibleNavbar">
                         <span className="navbar-toggler-icon"></span>
                     </button>
+                    <button className="navbar-toggler" onClick={this.props.drawer}>
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
                     <div className="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                         <ul className="navbar-nav">
                             <li className="nav-item">

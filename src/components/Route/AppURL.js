@@ -41,7 +41,7 @@ class AppURL {
     }
 
     BulkMigration() {
-        return '/feature/driver/BulkMigration'
+        return '/feature/driver/bulkMigration'
     }
 
     authentication() {

@@ -30,7 +30,9 @@ class Feature extends Component {
                 <div className='container mx-auto pt-5'>
                     <div className="row">
                         <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12">
-                            <SidebarFeature/>
+                            <div className={style.noneMobile}>
+                                <SidebarFeature/>
+                            </div>
                         </div>
                         <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12">
                             <div className="main">

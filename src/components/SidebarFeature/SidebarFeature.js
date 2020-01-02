@@ -67,7 +67,7 @@ class SidebarFeature extends Component {
                             <span className="nav-link" onClick={this.toggleEmail}
                                   style={{fontWeight: this.state.openEmail ? 'bold' : null}}>G Mail</span>
                             {localStorage.getItem('openMail') === 'true' && <div>
-                                <ul className="nav flex-column" style={{marginLeft: -30}}>
+                                <ul className="nav flex-column">
                                     {GMail.map((i, index) => (
                                         <li key={index}
                                             className='nav-item'>
@@ -88,7 +88,7 @@ class SidebarFeature extends Component {
                             <span className="nav-link" onClick={this.toggleDriver}
                                   style={{fontWeight: this.state.openDriver ? 'bold' : null}}>Driver</span>
                             {localStorage.getItem('openDriver') === 'true' && <div>
-                                <ul className="nav flex-column" style={{marginLeft: -30}}>
+                                <ul className="nav flex-column">
                                     {Driver.map((i, index) => (
                                         <li key={index}
                                             className='nav-item'>
@@ -108,7 +108,7 @@ class SidebarFeature extends Component {
                             <span className="nav-link" onClick={this.toggleOther}
                                   style={{fontWeight: this.state.openOther ? 'bold' : null}}>Other feature</span>
                             {localStorage.getItem('openOther') === 'true' && <div>
-                                <ul className="nav flex-column" style={{marginLeft: -30}}>
+                                <ul className="nav flex-column" >
                                     {Other.map((i, index) => (
                                         <li key={index}
                                             className='nav-item'>
